@@ -18,14 +18,19 @@ namespace SpaceOdyssey.Planets
             I = this;
         }
 
-        public Planet SpawnPlanet(FrameSlot slot)
+        public Planet SpawnPlanet(FrameSlot slot,PlanetData planetData = null)
         {
-            Planet planet = Instantiate(planetPrefab, slot.transform.position + new Vector3(0, Frame.I.slotHeight, 0), Quaternion.identity);
+            if (planetData == null)
+            {
+                int planetNumber = Random.Range(0, planetDatas.Length);
+                planetData = planetDatas[planetNumber];
+            }
+
+            Planet planet = Instantiate(planetPrefab, slot.transform.position, Quaternion.identity);
             slot.planet = planet;
-            int planetNumber = Random.Range(0, planetDatas.Length);
-            PlanetData planetData = planetDatas[planetNumber];
             planet.GetComponent<Planet>().SetIdentity(planetData);
             return planet;
+
         }
     }
 }

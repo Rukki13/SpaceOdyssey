@@ -3090,8 +3090,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87d71c92642698848936f4d7e06e6c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 8
-  height: 12
+  width: 6
+  height: 11
   slotHeight: 0
   slotPrefab: {fileID: 4362704885948983280, guid: 8e55d50706ab2874f84343319f82f2c4, type: 3}
 --- !u!114 &1568951128
@@ -3106,12 +3106,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e906d93ede3641e46aeaaf90e6da7b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetMovementSpeed: 5
+  planetMovementSpeed: 10
   patterns:
-  - {fileID: 11400000, guid: 7351976aad2f355498c4b8b06902657c, type: 2}
-  - {fileID: 11400000, guid: 9ddce1d7609a1a04c86767ad9fee8a8a, type: 2}
   - {fileID: 11400000, guid: 764fae457c237b7418e140b9c5ec9459, type: 2}
   - {fileID: 11400000, guid: dec1798728c76884aa1d472def5e496f, type: 2}
+  - {fileID: 11400000, guid: 175299fc65b91db4f8bce0e9b834322e, type: 2}
+  - {fileID: 11400000, guid: 6ee7a9e83e874b24d9066c75403c1fe3, type: 2}
+  - {fileID: 11400000, guid: ec41a9f1029791f4692ebf803aa71b31, type: 2}
+  - {fileID: 11400000, guid: 11baddd96dbe4f7418283411566fa580, type: 2}
+  - {fileID: 11400000, guid: 70e044b599eae53419f1c49d38243da4, type: 2}
+  - {fileID: 11400000, guid: c436b87a0f73431438039111ed45ea9f, type: 2}
+  - {fileID: 11400000, guid: c7585800dbbc4fe44bdfb299463676cf, type: 2}
+  - {fileID: 11400000, guid: 746eef37cecf37f48bd6e54a6bd0cad8, type: 2}
+  - {fileID: 11400000, guid: 7351976aad2f355498c4b8b06902657c, type: 2}
+  - {fileID: 11400000, guid: 9ddce1d7609a1a04c86767ad9fee8a8a, type: 2}
   - {fileID: 11400000, guid: 6df115f41116bee4f8aa8539385f58e7, type: 2}
   - {fileID: 11400000, guid: f718061abb0d3e941b76731b9f3bce6d, type: 2}
   - {fileID: 11400000, guid: f3b911ebf479b1645b1ae851442bb26f, type: 2}
@@ -3974,8 +3982,8 @@ SceneRoots:
   m_Roots:
   - {fileID: 1338534157}
   - {fileID: 464623348}
-  - {fileID: 370273756}
   - {fileID: 1823422587}
+  - {fileID: 370273756}
   - {fileID: 314710163}
   - {fileID: 1014055413}
   - {fileID: 1932216633}

@@ -10,6 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02d8b7926da9fa6419e5d1594bab438c, type: 3}
-  m_Name: Blue Planet
+  m_Name: Meteor
   m_EditorClassIdentifier: 
-  skin: {fileID: 21300000, guid: c113c5b5e47d3e949a307a060facf033, type: 3}
+  skin: {fileID: 21300000, guid: 7df96a13be6d2ac48bbb404adf52e987, type: 3}
+  synonyms: []

@@ -26,6 +26,8 @@ namespace SpaceOdyssey.Frames
 
         public override bool IsOver()
         {
+            if (planet == null)
+                return true;
             if (Vector3.Distance(planet.transform.position, targetSlot.transform.position) < movementSpeed * Time.fixedDeltaTime)
             {
                 planet.transform.position = targetSlot.transform.position;
@@ -36,6 +38,8 @@ namespace SpaceOdyssey.Frames
 
         public override void FixedUpdate()
         {
+            if (planet == null)
+                return;
             Vector3 direction = targetSlot.transform.position - planet.transform.position;
             direction.Normalize();
             planet.transform.position += direction * movementSpeed * Time.fixedDeltaTime;
@@ -58,13 +62,10 @@ namespace SpaceOdyssey.Frames
 
         public override bool IsOver()
         {
-            if (!isGoingBack)
+            if (isGoingBack == false)
             {
                 if (ReachedSlot(fromSlot.planet, toSlot) && ReachedSlot(toSlot.planet, fromSlot))
                 {
-                    Debug.Log("Will now go back!");
-                    fromSlot.planet.transform.position = toSlot.transform.position;
-                    toSlot.planet.transform.position = fromSlot.transform.position;
                     isGoingBack = true;
                 }
                 return false;
@@ -73,13 +74,13 @@ namespace SpaceOdyssey.Frames
             {
                 if (ReachedSlot(fromSlot.planet, fromSlot) && ReachedSlot(toSlot.planet, toSlot))
                 {
-                    Debug.Log("Finished Fake!");
                     fromSlot.planet.transform.position = fromSlot.transform.position;
                     toSlot.planet.transform.position = toSlot.transform.position;
                     return true;
                 }
                 return false;
             }
+
         }
 
         private bool ReachedSlot(Planet planet, FrameSlot slot)
@@ -89,10 +90,23 @@ namespace SpaceOdyssey.Frames
 
         public override void FixedUpdate()
         {
-            Vector3 direction = -fromSlot.planet.transform.position + (isGoingBack? fromSlot.transform.position : toSlot.transform.position);
-            direction.Normalize();
-            fromSlot.planet.transform.position += direction * movementSpeed * Time.fixedDeltaTime;
-            toSlot.planet.transform.position += -direction * movementSpeed * Time.fixedDeltaTime;
+            if (!isGoingBack)
+            {
+                MovePlanet(fromSlot.planet, toSlot);
+                MovePlanet(toSlot.planet, fromSlot);
+            }
+            else
+            {
+                MovePlanet(toSlot.planet, toSlot);
+                MovePlanet(fromSlot.planet, fromSlot);
+            }
+
+        }
+
+        private void MovePlanet(Planet planet, FrameSlot slot)
+        {
+            Vector3 direction = planet.transform.position - slot.transform.position;
+            planet.transform.position -= direction * movementSpeed * Time.fixedDeltaTime;
         }
     }
 }

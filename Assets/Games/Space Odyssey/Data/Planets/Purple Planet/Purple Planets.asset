@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d8b7926da9fa6419e5d1594bab438c, type: 3}
+  m_Name: Purple Planets
+  m_EditorClassIdentifier: 
+  skin: {fileID: 0}
+  synonyms:
+  - {fileID: 11400000, guid: 9edfd4d465668fc4686040c993d1dcf7, type: 2}
+  - {fileID: 11400000, guid: 52b31e29e29a42b439bf31ed1973bba0, type: 2}
+  - {fileID: 11400000, guid: 1310daf54ddc30d4e90a1234d44288b1, type: 2}

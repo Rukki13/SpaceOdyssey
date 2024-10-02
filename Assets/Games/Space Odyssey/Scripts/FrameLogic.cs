@@ -23,8 +23,9 @@ namespace SpaceOdyssey.Frames
 
         private bool performOperations = false;
 
-        public FrameSlot GetFrameSlot(V2 index) {
-            return slots[index.x, index.y]; 
+        public FrameSlot GetFrameSlot(V2 index)
+        {
+            return slots[index.x, index.y];
         }
 
         private void Awake()
@@ -66,11 +67,13 @@ namespace SpaceOdyssey.Frames
 
         private IEnumerator TicCoroutine()
         {
+            Debug.Log("TIC()");
             performOperations = false;
 
             bool performPatternMatching = true;
             if (TryMovePlanets())
             {
+                Debug.Log("Planets are moving, skip pattern matching.");
                 performPatternMatching = false;
             }
 
@@ -78,11 +81,13 @@ namespace SpaceOdyssey.Frames
             {
                 if (TryPatternMatching())
                 {
-                    yield return new WaitForSeconds(0.15f);
+                    yield return new WaitForSeconds(0.15f); //freeze for a bit
                 }
             }
 
             performOperations = true;
+
+            Debug.Log("END TIC");
         }
 
         private bool TryMovePlanets()
@@ -100,13 +105,13 @@ namespace SpaceOdyssey.Frames
                             didMovePlanets = true;
                             if (y == height - 1)
                             {
-                                SpawnPlanet(slots[x, y]);
+                                SpawnTopRowPlanet(slots[x, y]);
                             }
                         }
                     }
                     else if (y == height - 1)
                     {
-                        SpawnPlanet(slots[x, y]);
+                        SpawnTopRowPlanet(slots[x, y]);
                     }
 
                 }
@@ -116,6 +121,7 @@ namespace SpaceOdyssey.Frames
 
         private bool TryPatternMatching(bool executePattern = true)
         {
+            Debug.Log("TryPAtternMAtching()");
             for (int y = 0; y < height; y++)
             {
                 for (int x = 0; x < width; x++)
@@ -124,6 +130,7 @@ namespace SpaceOdyssey.Frames
                     PatternData matchingPattern = null;
                     foreach (PatternData pattern in patterns)
                     {
+                        //Debug.Log("Analysing pattern:" + pattern.name);
                         bool oneWasMissing = false;
                         foreach (V2 member in pattern.members)
                         {
@@ -132,7 +139,7 @@ namespace SpaceOdyssey.Frames
                                 oneWasMissing = true;
                                 break;
                             }
-                            if (planet.data != slots[x, y].planet.data)
+                            if (!planet.data.IsMe(slots[x, y].planet.data))
                             {
                                 oneWasMissing = true;
                                 break;
@@ -146,13 +153,18 @@ namespace SpaceOdyssey.Frames
                     }
                     if (matchingPattern != null)
                     {
+                        Debug.Log("Found pattern: " + matchingPattern.name);
                         if (executePattern)
                         {
+                            PlanetData result = matchingPattern.WhatIsTheResult(slots[x, y].planet.data);
                             foreach (V2 member in matchingPattern.members)
                             {
                                 Destroy(slots[x + member.x, y + member.y].planet.gameObject);
                                 slots[x + member.x, y + member.y].planet = null;
                             }
+
+                            if (result != null)
+                                SpawnSpecialPlanet(slots[x, y], result);
                         }
                         return true;
                     }
@@ -176,33 +188,38 @@ namespace SpaceOdyssey.Frames
         }
 
 
-        public void SpawnPlanet(FrameSlot slot)
+        public void SpawnTopRowPlanet(FrameSlot slot)
         {
             Planet planet = PlanetGenerator.I.SpawnPlanet(slot);
+            planet.transform.position += new Vector3(0, Frame.I.slotHeight, 0);
 
             MoveOperation operation = new MoveOperation(planet, slot, planetMovementSpeed);
             operations.Add(operation);
         }
+        public void SpawnSpecialPlanet(FrameSlot slot, PlanetData planetData)
+        {
+            Planet planet = PlanetGenerator.I.SpawnPlanet(slot, planetData);
+        }
 
         public void MovePlanet(FrameSlot fromSlot, FrameSlot toSlot)
         {
-            if (fromSlot.planet != null && toSlot.planet == null)
+            if (fromSlot.planet != null && toSlot.planet == null)//Move planet to empty slot
             {
                 toSlot.planet = fromSlot.planet;
                 fromSlot.planet = null;
                 MoveOperation operation = new MoveOperation(toSlot.planet, toSlot, planetMovementSpeed);
                 operations.Add(operation);
             }
-            else if (fromSlot.planet != null && fromSlot.planet != null)
+            else if (fromSlot.planet != null && fromSlot.planet != null) //Switch slots contents
             {
                 Planet planet1 = fromSlot.planet;
                 fromSlot.planet = toSlot.planet;
                 toSlot.planet = planet1;
                 if (TryPatternMatching(false))
                 {
-                    MoveOperation operation1 = new MoveOperation(toSlot.planet, fromSlot, planetMovementSpeed);
+                    MoveOperation operation1 = new MoveOperation(toSlot.planet, toSlot, planetMovementSpeed);
                     operations.Add(operation1);
-                    MoveOperation operation2 = new MoveOperation(fromSlot.planet, toSlot, planetMovementSpeed);
+                    MoveOperation operation2 = new MoveOperation(fromSlot.planet, fromSlot, planetMovementSpeed);
                     operations.Add(operation2);
                 }
                 else

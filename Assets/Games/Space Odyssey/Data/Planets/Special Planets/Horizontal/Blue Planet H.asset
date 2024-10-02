@@ -10,6 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02d8b7926da9fa6419e5d1594bab438c, type: 3}
-  m_Name: Red Planet
+  m_Name: Blue Planet H
   m_EditorClassIdentifier: 
-  skin: {fileID: 21300000, guid: f41a786cc2d9c1e4c8c95292ce8e8cd4, type: 3}
+  skin: {fileID: 21300000, guid: 0fb4358b549514443a18027dde332c6e, type: 3}
+  synonyms:
+  - {fileID: 11400000, guid: 16e7189effa5e9d47900af7a74027026, type: 2}

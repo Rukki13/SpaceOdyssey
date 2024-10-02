@@ -33,7 +33,6 @@ namespace SpaceOdyssey.Players
         {
             if (Input.GetMouseButtonDown(0))
             {
-
                 Vector2 mousePosition = camera.ScreenToWorldPoint(Input.mousePosition + Vector3.forward * 10);
                 RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
                 if (hit.collider != null)

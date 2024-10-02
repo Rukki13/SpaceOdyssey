@@ -23,3 +23,6 @@ MonoBehaviour:
     y: 3
   - x: 0
     y: 4
+  results:
+  - ingredient: {fileID: 0}
+    resultPlanet: {fileID: 11400000, guid: 3ba5e0b9b6a7624499c205e33b5be7cc, type: 2}

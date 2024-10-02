@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d8b7926da9fa6419e5d1594bab438c, type: 3}
+  m_Name: Red Planets
+  m_EditorClassIdentifier: 
+  skin: {fileID: 0}
+  synonyms:
+  - {fileID: 11400000, guid: bbe29829f3915cd41a73a6779f893535, type: 2}
+  - {fileID: 11400000, guid: a0e68efc0bcdbd34ab721eac3765f992, type: 2}
+  - {fileID: 11400000, guid: 6b03e4d705e4a1a48a62ade905323f67, type: 2}

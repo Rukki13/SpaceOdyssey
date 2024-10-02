@@ -10,6 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02d8b7926da9fa6419e5d1594bab438c, type: 3}
-  m_Name: Orange Planet
+  m_Name: Yellow Planet V
   m_EditorClassIdentifier: 
-  skin: {fileID: 21300000, guid: 75f9c99b6cb037b42b3b7a383baa55e0, type: 3}
+  skin: {fileID: 21300000, guid: c2de94576fc924a41befc5b6668c7133, type: 3}
+  synonyms:
+  - {fileID: 11400000, guid: 4a285b2a574a3dd41949e4fec2039d8d, type: 2}

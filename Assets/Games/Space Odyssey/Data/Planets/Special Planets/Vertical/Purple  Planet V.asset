@@ -10,6 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02d8b7926da9fa6419e5d1594bab438c, type: 3}
-  m_Name: Light Blue Planet
+  m_Name: Purple  Planet V
   m_EditorClassIdentifier: 
-  skin: {fileID: 21300000, guid: 931585103726e284887a455ac2542b54, type: 3}
+  skin: {fileID: 21300000, guid: 96abfb0f44f1b7c4eaac1db9c0c2f944, type: 3}
+  synonyms:
+  - {fileID: 11400000, guid: b59703b060d8f0a4f905c89ebf540d84, type: 2}

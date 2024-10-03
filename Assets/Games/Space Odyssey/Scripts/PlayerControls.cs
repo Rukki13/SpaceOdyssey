@@ -1,5 +1,6 @@
 using SpaceOdyssey.Frames;
 using SpaceOdyssey.Patterns;
+using SpaceOdyssey.Turns;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,13 +25,11 @@ namespace SpaceOdyssey.Players
             if (FrameLogic.I.isOperating)
                 return;
             DetectSlot();
-            if (state == State.Moving)
-            {
-                //print direction since drag start
-            }
         }
         private void DetectSlot()
         {
+            if (!TurnManager.I.myTurn) 
+                return;
             if (Input.GetMouseButtonDown(0))
             {
                 Vector2 mousePosition = camera.ScreenToWorldPoint(Input.mousePosition + Vector3.forward * 10);
@@ -51,6 +50,7 @@ namespace SpaceOdyssey.Players
             }
             else if (Input.GetMouseButtonUp(0))
             {
+
                 if (state == State.Moving)
                 {
                     V2 newSlotIndex=default;
@@ -82,7 +82,11 @@ namespace SpaceOdyssey.Players
                     {
                         newSlotIndex = new V2(selectedSlot.x , selectedSlot.y - 1);
                     }
-                    FrameLogic.I.MovePlanet(selectedSlot, FrameLogic.I.GetFrameSlot(newSlotIndex));
+                    if (Frame.I.DoesSlotExist(newSlotIndex))
+                    {
+                        FrameLogic.I.SyncMovePlanet(selectedSlot, FrameLogic.I.GetFrameSlot(newSlotIndex));
+                        TurnManager.I.OnFinishedTurn();
+                    }
                 }
             }
         }

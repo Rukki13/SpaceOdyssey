@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d8b7926da9fa6419e5d1594bab438c, type: 3}
+  m_Name: Horizontal Planet
+  m_EditorClassIdentifier: 
+  skin: {fileID: 0}
+  synonyms:
+  - {fileID: 11400000, guid: 0902f34e21a243b4a97547cf3542eed8, type: 2}
+  - {fileID: 11400000, guid: a7f03795982f78d47b2def1a26ede6ab, type: 2}
+  - {fileID: 11400000, guid: 952ac100a30274c48a82a156517c1385, type: 2}
+  - {fileID: 11400000, guid: 52b31e29e29a42b439bf31ed1973bba0, type: 2}
+  - {fileID: 11400000, guid: a0e68efc0bcdbd34ab721eac3765f992, type: 2}
+  - {fileID: 11400000, guid: 27f2b75825c6dae4ea02406d913460e4, type: 2}
+  operationOnDestroy: {fileID: 0}

@@ -1,3 +1,4 @@
+using SpaceOdyssey.Patterns;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,7 +27,13 @@ namespace SpaceOdyssey.Frames
         private void Start()
         {
         }
-        private void Initialize()
+
+        public bool DoesSlotExist(V2 index)
+        {
+            return (index.x >= 0 && index.y >= 0 && index.x < width && index.y < height);
+        }
+
+        public void Initialize()
         {
             slots = new FrameSlot[width, height];
             Vector3 boardSize = GetComponent<SpriteRenderer>().bounds.size;

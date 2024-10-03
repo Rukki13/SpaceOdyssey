@@ -7,6 +7,8 @@ namespace SpaceOdyssey.Planets
     public class Planet : MonoBehaviour
     {
         public PlanetData data;
+        [HideInInspector] public bool suppressDestroyEvents;
+
         public void SetIdentity(PlanetData planetData)
         {
             GetComponent<SpriteRenderer>().sprite = planetData.skin;

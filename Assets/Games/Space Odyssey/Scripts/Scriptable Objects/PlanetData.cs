@@ -9,10 +9,12 @@ namespace SpaceOdyssey.Planets
     {
         public Sprite skin;
         public PlanetData[] synonyms;
+        public FrameOperation operationOnDestroy;
+        public ParticleSystem onDestroyVFX;
 
-        public bool IsMe(PlanetData planetData)
+        public bool IsSynonym(PlanetData planetData)
         {
-            if(this == planetData)  return true;
+            if(this == planetData) return true;
             
             for (int i = 0; i < synonyms.Length; i++)
             {

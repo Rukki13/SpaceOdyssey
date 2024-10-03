@@ -15,3 +15,5 @@ MonoBehaviour:
   skin: {fileID: 21300000, guid: 054e291cf9343234bab6f12e8ea57ec6, type: 3}
   synonyms:
   - {fileID: 11400000, guid: 16e7189effa5e9d47900af7a74027026, type: 2}
+  operationOnDestroy: {fileID: 4082080204692402896, guid: 61af34ab1d4c5a945a91e73eb4b9aded, type: 3}
+  onDestroyVFX: {fileID: 7491397715666912818, guid: 77a8763f38b92ac49a3bbf8a2e6cd4d6, type: 3}

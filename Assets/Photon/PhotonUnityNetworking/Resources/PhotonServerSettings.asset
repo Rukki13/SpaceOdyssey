@@ -48,6 +48,10 @@ MonoBehaviour:
   - UpdateScore
   - WearCrown
   - SyncTransform
+  - OnFinishedTurn
+  - SetTurnLogic
+  - SyncSeed
+  - MovePlanet
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 0

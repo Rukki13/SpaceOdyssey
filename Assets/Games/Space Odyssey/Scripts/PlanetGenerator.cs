@@ -13,16 +13,23 @@ namespace SpaceOdyssey.Planets
         [SerializeField] private Planet planetPrefab;
         [SerializeField] private PlanetData[] planetDatas;
 
+        public System.Random random;
+
         private void Awake()
         {
             I = this;
+
         }
 
+        public void Initialize(int seed )
+        {
+            random = new System.Random(seed);
+        }
         public Planet SpawnPlanet(FrameSlot slot,PlanetData planetData = null)
         {
             if (planetData == null)
             {
-                int planetNumber = Random.Range(0, planetDatas.Length);
+                int planetNumber = random.Next(0, planetDatas.Length);
                 planetData = planetDatas[planetNumber];
             }
 
@@ -30,7 +37,6 @@ namespace SpaceOdyssey.Planets
             slot.planet = planet;
             planet.GetComponent<Planet>().SetIdentity(planetData);
             return planet;
-
         }
     }
 }

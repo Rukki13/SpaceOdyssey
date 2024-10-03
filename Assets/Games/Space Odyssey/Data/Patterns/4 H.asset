@@ -23,7 +23,7 @@ MonoBehaviour:
     y: 0
   results:
   - ingredient: {fileID: 11400000, guid: 16e7189effa5e9d47900af7a74027026, type: 2}
-    resultPlanet: {fileID: 11400000, guid: 0902f34e21a243b4a97547cf3542eed8, type: 2}
+    resultPlanet: {fileID: 11400000, guid: 2030853ed0b5b714a84f48c93c1d7858, type: 2}
   - ingredient: {fileID: 11400000, guid: b59703b060d8f0a4f905c89ebf540d84, type: 2}
     resultPlanet: {fileID: 11400000, guid: 1310daf54ddc30d4e90a1234d44288b1, type: 2}
   - ingredient: {fileID: 11400000, guid: 1e9a87104ec93f342b9b36055c4d9b42, type: 2}
@@ -31,6 +31,6 @@ MonoBehaviour:
   - ingredient: {fileID: 11400000, guid: e1ea826603ebcfa4ebbac02ba4fae1ad, type: 2}
     resultPlanet: {fileID: 11400000, guid: a948e4864959ad24e8c2c5ac604cf2fc, type: 2}
   - ingredient: {fileID: 11400000, guid: 1186c7e9f1320f149a27fe9dfec7cd56, type: 2}
-    resultPlanet: {fileID: 11400000, guid: bbe29829f3915cd41a73a6779f893535, type: 2}
+    resultPlanet: {fileID: 11400000, guid: 6b03e4d705e4a1a48a62ade905323f67, type: 2}
   - ingredient: {fileID: 11400000, guid: 4a285b2a574a3dd41949e4fec2039d8d, type: 2}
     resultPlanet: {fileID: 11400000, guid: e1b563724274cbf43b9d3d271768e4f4, type: 2}

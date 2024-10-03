@@ -31,11 +31,12 @@ namespace SpaceOdyssey.Patterns
 
         public PlanetData WhatIsTheResult(PlanetData planetInPattern)
         {
+            if (results == null) return null;
             for (int i = 0; i < results.Length; i++)
             {
                 if (results[i].ingredient == null)
                     return results[i].resultPlanet;
-                if (results[i].ingredient.IsMe(planetInPattern))
+                if (results[i].ingredient.IsSynonym(planetInPattern))
                     return results[i].resultPlanet;
             }
             return null;

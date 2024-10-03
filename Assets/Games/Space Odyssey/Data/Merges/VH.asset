@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6accea83b9e0d1f41851030df89687e1, type: 3}
+  m_Name: VH
+  m_EditorClassIdentifier: 
+  planet1: {fileID: 11400000, guid: 5cbc66670c282344897e30e841d1783d, type: 2}
+  planet2: {fileID: 11400000, guid: bad31ea28ca42e7479d9be858db7da12, type: 2}
+  resultOperation: {fileID: 7843055632792648758, guid: 36ea584e87410364fabc1344175f340b, type: 3}
+  startVFX: {fileID: 7491397715666912818, guid: 54836f68ce18c2946983239dba70f7f7, type: 3}
